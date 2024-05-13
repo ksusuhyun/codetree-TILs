@@ -1,8 +1,8 @@
 num = list(map(int,input().split()))
-max_, min_ = num[0], num[0]
+l1, l2 = [], []
 for i in num:
-    if i<500 and max_ < i:
-        max_ = i
-    if i>500 and min_ > i:
-        min_ = i
-print(f'{max_} {min_}')
+    if i > 500:
+        l2.append(i)
+    else:
+        l1.append(i)
+print(f'{max(l1)} {min(l2)}')
