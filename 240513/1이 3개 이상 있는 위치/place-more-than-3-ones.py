@@ -5,8 +5,7 @@ num = [
 ]
 
 def in_range(x,y):
-    if 0 <= x and x < n and 0 <= y and y < n:
-        return 1
+    return 0 <= x and x < n and 0 <= y and y < n
 
 res = 0
 dx, dy = [1,-1,0,0], [0,0,-1,1]
