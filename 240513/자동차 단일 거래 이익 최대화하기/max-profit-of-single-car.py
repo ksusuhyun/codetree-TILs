@@ -1,6 +1,6 @@
 n = int(input())
 cost = list(map(int,input().split()))
-print(cost)
+
 max_ = 0
 for i in range(len(cost)):
     for j in range(i,len(cost)):
