@@ -11,15 +11,15 @@ dx, dy = [-1,0,1,0], [0,1,0,-1]
 x,y= 0, 0
 d2[x][y] = 1
 d_num = 1
-for i in range(1,n*m+1):
+for i in range(2,n*m+1):
     nx,ny = x+dx[d_num], y+dy[d_num]
 
-    if not in_range(nx,ny) and d2[nx][ny] == 0:
+    if not in_range(nx,ny) or d2[nx][ny] != 0:
         d_num = (d_num+1)%4
 
     x, y = x+dx[d_num], y+dy[d_num]
     d2[x][y] = i
-    
+
 for k in d2:
     for h in k:
         print(h, end=" ")
