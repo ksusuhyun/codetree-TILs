@@ -12,7 +12,7 @@ for i in range(n):
     elif d == 'E':
         dx[2] = w
     else:
-        dx[3] = w
+        dx[3] = -1*w
 x, y = 0, 0
 for i in dd:
     if i == 'S':
