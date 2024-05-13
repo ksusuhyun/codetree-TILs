@@ -1,5 +1,5 @@
 s = input()
-s = list(s)
+
 dx,dy =[0,1,0,-1],[1,0,-1,0]
 x, y = 0,0
 current = 0
