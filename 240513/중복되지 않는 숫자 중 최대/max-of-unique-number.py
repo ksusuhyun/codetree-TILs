@@ -6,7 +6,7 @@ for i in num:
         cnt[i] += 1
     else:
         cnt[i] = 1
-max_key = 0
+max_key = -1
 for key, val in cnt.items():
     if val == 1 and key > max_key:
         max_key = key
