@@ -17,7 +17,7 @@ for i in range(n):
     if cut == 1:
         break
 
-if t == 0:
+if cut == 0:
     print(-1)
 else:
     print(t)
