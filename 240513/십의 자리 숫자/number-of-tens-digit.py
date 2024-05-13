@@ -1,7 +1,7 @@
 num = list(map(int,input().split()))
 cnt = [0] * 10
 for i in num:
-    if num != 0:
+    if i != 0:
         cnt[i//10] += 1
     else:
         break
