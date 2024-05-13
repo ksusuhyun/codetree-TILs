@@ -1,7 +1,7 @@
 n = int(input())
 dx, dy = [1,-1,0,0], [0,0,-1,1]
 x, y = 0, 0
-sec = 0
+sec, c = 0, 0
 for i in range(n):
     d, w = input().split()
     w = int(w)
@@ -18,8 +18,8 @@ for i in range(n):
         x,y = x+dx[d_num], y+dy[d_num]
         sec += 1
         if x == 0 and y == 0:
+            c += 1
             print(sec)
             break
-            
-if sec == 0:
+if c == 0:
     print(-1)
