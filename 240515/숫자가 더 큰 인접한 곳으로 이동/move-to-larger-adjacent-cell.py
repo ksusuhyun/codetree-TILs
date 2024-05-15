@@ -12,6 +12,7 @@ while True:
         nx, ny = x+dx[i], y+dy[i]
         if in_range(nx,ny) and grid[x][y] < grid[nx][ny] :
             num.append(grid[nx][ny])
+            ox, oy = x, y
             x, y = nx, ny
             break
         ox, oy = x, y
