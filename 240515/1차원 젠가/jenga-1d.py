@@ -4,12 +4,12 @@ jenga = [int(input()) for _ in range(n)]
 def take_out(jenga,s,e):
     for i in range(s-1,e):
         jenga[i] = 0
+
     temp = []
     for j in jenga:
         if j != 0:
             temp.append(j)
-    jenga = temp
-    return jenga
+    return temp
 
 
 for _ in range(2):
