@@ -8,15 +8,15 @@ def in_range(x,y):
 
 num = [grid[x][y]]
 while True:
+    flag = False
     for i in range(4):
         nx, ny = x+dx[i], y+dy[i]
         if in_range(nx,ny) and grid[x][y] < grid[nx][ny] :
+            flag = True
             num.append(grid[nx][ny])
-            ox, oy = x, y
             x, y = nx, ny
             break
-        ox, oy = x, y
-    if ox == x and oy == y:
+    if not flag:
         break
 
 for i in num:
