@@ -15,12 +15,15 @@ for _ in range(t):
     for x in range(n):
         for y in range(n):
             if glass[x][y] == 1:
+                max_ = 0
                 for i in range(4):
                     nx, ny = x + dx[i], y + dy[i]
-                    if in_range(nx,ny) and grid[x][y] < grid[nx][ny] :
-                        glass[x][y] = 0
-                        glass[nx][ny] += 1
-                        break
+                    if in_range(nx,ny) and max_ < grid[nx][ny] :
+                        max_ = grid[nx][ny]
+                        mx, my = nx, ny
+                    glass[x][y] = 0
+                    glass[mx][my] += 1
+                    break
 
 res = 0
 for rr in range(n):
