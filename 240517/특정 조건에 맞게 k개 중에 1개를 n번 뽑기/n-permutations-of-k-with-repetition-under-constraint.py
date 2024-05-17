@@ -7,7 +7,7 @@ def choice(curr_num):
         return
 
     for i in range(1,k+1):
-        if res.count(i) < 3:
+        if res.count(i) <= 3:
             res.append(i)
             choice(curr_num+1)
             res.pop()
