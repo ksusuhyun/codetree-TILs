@@ -22,10 +22,11 @@ for _ in range(t):
                     if in_range(nx,ny) and max_ < grid[nx][ny] :
                         max_ = grid[nx][ny]
                         mx, my = nx, ny
-                # print(x,y,mx,my)
+                print(x,y,mx,my)
                 glass[x][y] = 0
                 new_glass[mx][my] += 1
-    glass, new_glass = new_glass, glass
+    glass = new_glass
+    new_glass = [ [0]*n for _ in range(n) ]
 
 res = 0
 for rr in range(n):
