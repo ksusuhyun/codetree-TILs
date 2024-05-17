@@ -21,9 +21,8 @@ for _ in range(t):
                     if in_range(nx,ny) and max_ < grid[nx][ny] :
                         max_ = grid[nx][ny]
                         mx, my = nx, ny
-                    glass[x][y] = 0
-                    glass[mx][my] += 1
-                    break
+                glass[x][y] = 0
+                glass[mx][my] += 1
 
 res = 0
 for rr in range(n):
