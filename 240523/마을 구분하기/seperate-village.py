@@ -6,7 +6,6 @@ def in_range(x,y):
 
 dx,dy = [-1,1,0,0],[0,0,-1,1]
 
-people = 0
 def dfs(x,y):
     global people
 
@@ -17,21 +16,16 @@ def dfs(x,y):
             visited[nx][ny] = 0
             dfs(nx,ny)
 
-cnt_c = 0
 cnt_p = []
-while True:
-    x, y = -1,-1  
-    for i in range(n):
-        if 1 in visited[i]:
-            x, y = i, visited[i].index(1)
-            break
-    if x == -1 and y == -1:
-        break
-    cnt_c += 1
-    dfs(x,y)
-    cnt_p.append(people)
-    people = 0
+for i in range(n):
+    for j in range(n):
+        if visited[i][j] == 1:
+            visited[i][j] = 0
+            people = 1
 
-print(cnt_c)
+            dfs(i,j)
+            cnt_p.append(people)
+
+print(len(cnt_p))
 for i in sorted(cnt_p):
     print(i)
