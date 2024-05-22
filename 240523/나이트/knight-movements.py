@@ -18,6 +18,8 @@ q = deque()
 dx,dy = [-2,-1,1,2,2,1,-1,-2],[-1,-2,-2,-1,1,2,2,2]
 def bfs():
     q.append((r1-1,c1-1))
+    visited[r1-1][c1-1] = True
+    
     while q:
         x,y = q.popleft()
         for i in range(8):
