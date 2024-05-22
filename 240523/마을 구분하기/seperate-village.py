@@ -16,6 +16,7 @@ def dfs(x,y):
             visited[nx][ny] = 0
             dfs(nx,ny)
 
+# 1을 찾는 과정
 cnt_p = []
 for i in range(n):
     for j in range(n):
