@@ -16,18 +16,20 @@ def can_go(x,y):
         return False
     return True
 
-q = deque()
-q.append((0,0))
-visited[0][0] = True
+def dfs():
+    q = deque()
+    q.append((0,0))
+    visited[0][0] = True
 
-dx, dy = [-1,1,0,0], [0,0,-1,1]
-while q:
-    x,y = q.popleft()
-    for i in range(4):
-        nx,ny = x+dx[i], y+dy[i]
-        if can_go(nx,ny):
-            visited[nx][ny] = True
-            q.append((nx,ny))
+    dx, dy = [-1,1,0,0], [0,0,-1,1]
+    while q:
+        x,y = q.popleft()
+        for i in range(4):
+            nx,ny = x+dx[i], y+dy[i]
+            if can_go(nx,ny):
+                visited[nx][ny] = True
+                q.append((nx,ny))
+dfs()
 
 if visited[n-1][m-1] == True:
     print(1)
