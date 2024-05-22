@@ -14,7 +14,7 @@ def dfs(curr_v):
             dfs(next_v)
 
 dfs(1)
-print(graph[1].count(1))
+print(visited.count(True))
 
 # # 인접 리스트
 # graph = [ [] for _ in range(N+1) ] # 1~N 번으로 정점 주어짐 => N+1개 만들어야 함
@@ -31,4 +31,4 @@ print(graph[1].count(1))
 #             visited[curr_v] = 1
 #             dfs(curr_v)
 
-# print(graph[1])
+# print()
