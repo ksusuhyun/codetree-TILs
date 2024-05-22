@@ -9,12 +9,13 @@ for _ in range(M):
 
 def dfs(curr_v):
     for next_v in range(1,N+1):
-        if graph[curr_v][next_v] and not visited[curr_v]:
-            visited[curr_v] = True
+        if graph[curr_v][next_v] and not visited[next_v]:
+            print(next_v)
+            visited[next_v] = True
             dfs(next_v)
 
 dfs(1)
-print(visited.count(True))
+# visited[1] = True
 
 # # 인접 리스트
 # graph = [ [] for _ in range(N+1) ] # 1~N 번으로 정점 주어짐 => N+1개 만들어야 함
