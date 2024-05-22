@@ -20,19 +20,13 @@ def dfs(x,y):
 cnt_c = 0
 cnt_p = []
 while True:
-    cnt_1 = 0
-    for i in range(n):
-        for j in range(n):
-            if visited[i][j] == 1:
-                cnt_1 += 1
-
-    if cnt_1 == 0:
-        break
-    
+    x, y = -1,-1  
     for i in range(n):
         if 1 in visited[i]:
             x, y = i, visited[i].index(1)
             break
+    if x == -1 and y == -1:
+        break
     cnt_c += 1
     dfs(x,y)
     cnt_p.append(people)
