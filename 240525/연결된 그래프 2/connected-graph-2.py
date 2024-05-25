@@ -3,37 +3,26 @@ graph = [ [] for _ in range(n+1) ]
 for _ in range(m):
     s,e = map(int,input().split())
     graph[s].append(e)
-visited = [ 0 for _ in range(n+1) ]
+visited = [ False for _ in range(n+1) ]
 
-memo = [ -1 for _ in range(n+1) ]
 def dfs(curr):
-    if visited[curr] == 2:
-        return memo[curr]
-
-    if visited[curr] == 1:
-        return memo[curr]
-
-    if len(graph[curr]) == 0:
-        memo[curr] = 0
-        visited[curr] = 2
-        return memo[curr]
-
-    visited[curr] = 1
-    memo[curr] = 0
+    global cnt
+    visited[curr] = True
+    cnt += 1
 
     for next_ in graph[curr]:
-        memo[curr] = max(memo[curr],dfs(next_)+1)
+        if not visited[next_]:
+            visited[next_] = True
+            dfs(next_)
 
-    visited[curr] = 2
-    return memo[curr]
-
-res = []
+cnt_ = []
 for i in range(1,n+1):
-    res.append(dfs(i))
-    visited = [ 0 for _ in range(n+1) ]
-    memo = [ -1 for _ in range(n+1) ]
+    cnt = 0
+    dfs(i)
+    cnt_.append(cnt)
+    visited = [ False for _ in range(n+1) ]
 
-maxx = max(res)
-for i in range(len(res)):
-    if res[i] == maxx:
+m = max(cnt_)
+for i in range(len(cnt_)):
+    if cnt_[i] == m :
         print(i+1, end=" ")
